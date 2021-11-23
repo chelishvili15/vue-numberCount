@@ -16,13 +16,18 @@
           +
         </button>
     </div>
-    <div class="bg-green-400 px-2 py-1 text-white rounded">
+    <div
+      class="bg-green-400 px-2 py-1 text-white rounded cursor-pointer mb-2"
+      @click="addRandomNumber">
         Add by random number
+    </div>
+    <div class="bg-blue-900 px-2 py-1 text-white rounded cursor-pointer">
+        Random number is {{ rNumber }}
     </div>
 </template>
 
 <script>
-import { mapState, mapMutations } from "vuex"
+import { mapState, mapMutations, mapActions } from "vuex"
 
 export default {
     data(){
@@ -31,10 +36,11 @@ export default {
         }
     },
     computed: {
-        ...mapState(['count'])
+        ...mapState(['count', 'rNumber'])
     },
     methods: {
-        ...mapMutations(['increase', 'dicrease'])
+        ...mapMutations(['increase', 'dicrease']),
+        ...mapActions(['addRandomNumber'])
     },
 }
 </script>
