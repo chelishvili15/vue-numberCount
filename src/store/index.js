@@ -18,9 +18,7 @@ export default createStore({
     async addRandomNumber(context){
       let data = await axios.get('https://www.random.org/integers/?num=1&min=-1000&max=1000&col=1&base=10&format=plain&rnd=new')
       context.commit('increase', data.data)
-      
       this.state.rNumber = data.data
-      console.log(this.state.rNumber)
     }
   },
   modules: {

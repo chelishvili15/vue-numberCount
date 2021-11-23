@@ -3,12 +3,12 @@
     <div class="bg-gray-400 flex px-5 py-2 rounded space-x-2 items-center mb-3" >
         <button
           class="bg-white px-4 pb-1 text-3xl rounded-full"
-          @click="dicrease(value)">
+          @click="dicrease(parseInt(value))">
           -
         </button>
         <input
           type="number"
-          class="pl-10 py-2"
+          class="py-2 text-center"
           v-model="value">
         <button
           class="bg-white px-4 pb-1 text-3xl rounded-full"
